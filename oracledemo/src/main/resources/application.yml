@@ -1,0 +1,33 @@
+# 应用名称
+spring:
+  application:
+    name: oracledemo
+
+  # 数据库配置信息
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:11521:RPTDB
+    username: rpt
+    password: rpt
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  port: 8089
+
+
+
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  typeAliasesPackage: com.lzw.oracledemo.entity
+
+
+
+# 日志输出配置
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.zqgk.oracledemo.mapper: debug

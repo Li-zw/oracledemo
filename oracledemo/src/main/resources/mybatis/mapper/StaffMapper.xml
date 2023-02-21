@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzw.oracledemo.mapper.StaffMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lzw.oracledemo.entity.Staff">
+        <id column="ID" property="id" />
+        <result column="NAME" property="name" />
+        <result column="SEX" property="sex" />
+        <result column="SFZHM" property="sfzhm" />
+        <result column="CSRQ" property="csrq" />
+        <result column="JG" property="jg" />
+        <result column="ZJHM" property="zjhm" />
+        <result column="SJHM" property="sjhm" />
+        <result column="EMAIL" property="email" />
+        <result column="ORDERNUM" property="ordernum" />
+        <result column="SFXYH" property="sfxyh" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, NAME, SEX, SFZHM, CSRQ, JG, ZJHM, SJHM, EMAIL, ORDERNUM, SFXYH
+    </sql>
+
+    <select id="getAllDatas" resultType="com.lzw.oracledemo.entity.Staff">
+        select <include refid="Base_Column_List"/>
+        from APP_BD_STAFF
+    </select>
+
+
+</mapper>
